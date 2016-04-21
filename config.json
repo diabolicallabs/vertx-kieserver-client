@@ -1,0 +1,9 @@
+{
+  "kie_server" : {
+    "host" : "localhost",
+    "port" : 8235,
+    "use_ssl" : false,
+    "user" : "kieserver",
+    "password" : "kieserver1!"
+  }
+}
