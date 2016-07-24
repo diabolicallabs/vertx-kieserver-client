@@ -41,8 +41,8 @@ public class KieServerClientTest {
     JsonObject config = new JsonObject();
     config.put("kie_server",
       new JsonObject()
-        .put("host", "localhost")
-        .put("port", 8230)
+        .put("host", "192.168.99.100")
+        .put("port", 8080)
         .put("use_ssl", false)
         .put("user", "kieserver")
         .put("password", "kieserver1!")
