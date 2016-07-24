@@ -1,4 +1,4 @@
-package com.diabolicallabs.kieserver.client;
+package com.diabolicallabs.kie.server;
 
 import io.vertx.codegen.annotations.DataObject;
 import io.vertx.core.json.JsonArray;
@@ -10,11 +10,11 @@ import java.util.List;
 @DataObject
 public class KieServerInformation {
 
-  String id;
-  String version;
-  String name;
-  String location;
-  List<String> capabilities = new ArrayList<>();
+  public String id;
+  public String version;
+  public String name;
+  public String location;
+  public List<String> capabilities = new ArrayList<>();
 
   public KieServerInformation() {
 

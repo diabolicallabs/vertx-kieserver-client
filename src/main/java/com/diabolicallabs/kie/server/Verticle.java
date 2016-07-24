@@ -1,4 +1,4 @@
-package com.diabolicallabs.kieserver.client;
+package com.diabolicallabs.kie.server;
 
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
@@ -16,13 +16,17 @@ public class Verticle extends AbstractVerticle {
 
     JsonObject serverConfig = config().getJsonObject("kie_server");
 
-    String credential = serverConfig.getString("user") + ":" + serverConfig.getString("password");
-    encodedCredential = new String(Base64.getEncoder().encode(credential.getBytes()));
+    encodedCredential = Credential.encode(serverConfig.getString("user"), serverConfig.getString("password"));
 
     ProxyHelper.registerService(
       KieServerClientService.class, getVertx(),
       new KieServerClientServiceImpl(getVertx(), serverConfig.getString("host"), serverConfig.getInteger("port"), encodedCredential),
       KieServerClientService.DEFAULT_ADDRESS);
+
+    ProxyHelper.registerService(
+      KieServerClientTaskService.class, getVertx(),
+      new KieServerClientTaskServiceImpl(getVertx(), serverConfig.getString("host"), serverConfig.getInteger("port")),
+      KieServerClientTaskService.DEFAULT_ADDRESS);
 
     startFuture.complete();
   }

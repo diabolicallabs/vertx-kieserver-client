@@ -1,5 +1,6 @@
 src/main/asciidoc/
 src/main/generated/
+.idea/
 
 ### OSX template
 .DS_Store
