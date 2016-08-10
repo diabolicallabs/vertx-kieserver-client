@@ -1,5 +1,6 @@
-package com.diabolicallabs.kie.server;
+package com.diabolicallabs.kie.server.service;
 
+import com.diabolicallabs.kie.server.model.*;
 import io.vertx.codegen.annotations.ProxyGen;
 import io.vertx.codegen.annotations.VertxGen;
 import io.vertx.core.AsyncResult;
@@ -14,7 +15,7 @@ import java.util.List;
 @VertxGen
 public interface KieServerClientService {
 
-  static String DEFAULT_ADDRESS = "kie.server.client.service";
+  static final String DEFAULT_ADDRESS = "kie.server.client.service";
 
   static KieServerClientService createProxy(Vertx vertx, String address) {
     return ProxyHelper.createProxy(KieServerClientService.class, vertx, address);

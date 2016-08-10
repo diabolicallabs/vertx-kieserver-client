@@ -1,5 +1,6 @@
-package com.diabolicallabs.kie.server;
+package com.diabolicallabs.kie.server.service;
 
+import com.diabolicallabs.kie.server.model.*;
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Future;
 import io.vertx.core.Handler;

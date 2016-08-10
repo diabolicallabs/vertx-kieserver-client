@@ -1,4 +1,4 @@
-package com.diabolicallabs.kie.server;
+package com.diabolicallabs.kie.server.service;
 
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Future;
@@ -88,8 +88,7 @@ public class KieServerClientTaskServiceImpl implements KieServerClientTaskServic
   @Override
   public void taskDelegate(String encodedCredential, String containerName, Long taskId, String delegateId, Handler<AsyncResult<Void>> handler) {
 
-
-    String sUrl = urlPrefix + "server/containers/" + containerName + "/tasks/" + taskId + "/states/delegated?targetUser=" + delegateId;
+    String sUrl = "server/containers/" + containerName + "/tasks/" + taskId + "/states/delegated?targetUser=" + delegateId;
     processAction(encodedCredential, sUrl, handler);
   }
 
@@ -141,7 +140,7 @@ public class KieServerClientTaskServiceImpl implements KieServerClientTaskServic
     StringJoiner sj = new StringJoiner("&potOwner=", "potOwner=","");
     nominations.forEach(sj::add);
 
-    String sUrl = urlPrefix + "server/containers/" + containerName + "/tasks/" + taskId + "/states/nominated?" + sj.toString();
+    String sUrl = "server/containers/" + containerName + "/tasks/" + taskId + "/states/nominated?" + sj.toString();
     processAction(encodedCredential, sUrl, handler);
   }
 

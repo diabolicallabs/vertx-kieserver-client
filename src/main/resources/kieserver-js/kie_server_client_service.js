@@ -20,14 +20,14 @@ var Vertx = require('vertx-js/vertx');
 
 var io = Packages.io;
 var JsonObject = io.vertx.core.json.JsonObject;
-var JKieServerClientService = com.diabolicallabs.kie.server.KieServerClientService;
-var KieProcessInstance = com.diabolicallabs.kie.server.KieProcessInstance;
-var KieContainer = com.diabolicallabs.kie.server.KieContainer;
-var KieProcessDefinition = com.diabolicallabs.kie.server.KieProcessDefinition;
-var KieServerInformation = com.diabolicallabs.kie.server.KieServerInformation;
-var KieUserTaskDefinition = com.diabolicallabs.kie.server.KieUserTaskDefinition;
-var GAV = com.diabolicallabs.kie.server.GAV;
-var KieWorkItemInstance = com.diabolicallabs.kie.server.KieWorkItemInstance;
+var JKieServerClientService = com.diabolicallabs.kie.server.service.KieServerClientService;
+var KieServerInformation = com.diabolicallabs.kie.server.model.KieServerInformation;
+var KieProcessInstance = com.diabolicallabs.kie.server.model.KieProcessInstance;
+var KieProcessDefinition = com.diabolicallabs.kie.server.model.KieProcessDefinition;
+var KieWorkItemInstance = com.diabolicallabs.kie.server.model.KieWorkItemInstance;
+var KieContainer = com.diabolicallabs.kie.server.model.KieContainer;
+var GAV = com.diabolicallabs.kie.server.model.GAV;
+var KieUserTaskDefinition = com.diabolicallabs.kie.server.model.KieUserTaskDefinition;
 
 /**
  @class
@@ -65,7 +65,7 @@ var KieServerClientService = function(j_val) {
   this.createContainer = function(name, gav, handler) {
     var __args = arguments;
     if (__args.length === 3 && typeof __args[0] === 'string' && (typeof __args[1] === 'object' && __args[1] != null) && typeof __args[2] === 'function') {
-      j_kieServerClientService["createContainer(java.lang.String,com.diabolicallabs.kie.server.GAV,io.vertx.core.Handler)"](name, gav != null ? new GAV(new JsonObject(JSON.stringify(gav))) : null, function(ar) {
+      j_kieServerClientService["createContainer(java.lang.String,com.diabolicallabs.kie.server.model.GAV,io.vertx.core.Handler)"](name, gav != null ? new GAV(new JsonObject(JSON.stringify(gav))) : null, function(ar) {
       if (ar.succeeded()) {
         handler(utils.convReturnDataObject(ar.result()), null);
       } else {

@@ -1,9 +1,10 @@
 package test.diabolicallabs.kieserver.client;
 
 
-import com.diabolicallabs.kie.server.GAV;
 import com.diabolicallabs.kie.server.Verticle;
-import com.diabolicallabs.kie.server.rxjava.KieServerClientService;
+import com.diabolicallabs.kie.server.model.GAV;
+import com.diabolicallabs.kie.server.model.KieWorkItemInstance;
+import com.diabolicallabs.kie.server.rxjava.service.KieServerClientService;
 import io.vertx.core.DeploymentOptions;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.unit.Async;
@@ -18,7 +19,6 @@ import rx.Observable;
 
 import java.util.List;
 import java.util.UUID;
-import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 
 @RunWith(io.vertx.ext.unit.junit.VertxUnitRunner.class)
@@ -41,7 +41,7 @@ public class KieServerClientTest {
     JsonObject config = new JsonObject();
     config.put("kie_server",
       new JsonObject()
-        .put("host", "192.168.99.100")
+        .put("host", "localhost")
         .put("port", 8080)
         .put("use_ssl", false)
         .put("user", "kieserver")
@@ -76,7 +76,7 @@ public class KieServerClientTest {
 
     Async async = context.async();
 
-    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.KieServerClientService.DEFAULT_ADDRESS);
+    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.service.KieServerClientService.DEFAULT_ADDRESS);
 
     service.informationObservable()
       .doOnNext(info -> {
@@ -97,7 +97,7 @@ public class KieServerClientTest {
 
     Async async = context.async();
 
-    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.KieServerClientService.DEFAULT_ADDRESS);
+    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.service.KieServerClientService.DEFAULT_ADDRESS);
 
     this.deleteAllContainersObservable(service)
       .subscribe(
@@ -113,7 +113,7 @@ public class KieServerClientTest {
 
     Async async = context.async();
 
-    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.KieServerClientService.DEFAULT_ADDRESS);
+    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.service.KieServerClientService.DEFAULT_ADDRESS);
 
     this.deleteAllContainersObservable(service)
       .flatMap(nothing -> {
@@ -135,7 +135,7 @@ public class KieServerClientTest {
 
     Async async = context.async();
 
-    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.KieServerClientService.DEFAULT_ADDRESS);
+    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.service.KieServerClientService.DEFAULT_ADDRESS);
 
     this.deleteAllContainersObservable(service)
       .flatMap(nothing -> {
@@ -162,7 +162,7 @@ public class KieServerClientTest {
 
     Async async = context.async();
 
-    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.KieServerClientService.DEFAULT_ADDRESS);
+    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.service.KieServerClientService.DEFAULT_ADDRESS);
 
     this.deleteAllContainersObservable(service)
       .flatMap(nothing -> {
@@ -189,7 +189,7 @@ public class KieServerClientTest {
 
     Async async = context.async();
 
-    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.KieServerClientService.DEFAULT_ADDRESS);
+    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.service.KieServerClientService.DEFAULT_ADDRESS);
 
     this.deleteAllContainersObservable(service)
       .flatMap(nothing -> {
@@ -217,7 +217,7 @@ public class KieServerClientTest {
 
     Async async = context.async();
 
-    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.KieServerClientService.DEFAULT_ADDRESS);
+    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.service.KieServerClientService.DEFAULT_ADDRESS);
 
     this.deleteAllContainersObservable(service)
       .flatMap(nothing -> {
@@ -248,7 +248,7 @@ public class KieServerClientTest {
 
     Async async = context.async();
 
-    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.KieServerClientService.DEFAULT_ADDRESS);
+    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.service.KieServerClientService.DEFAULT_ADDRESS);
 
     this.deleteAllContainersObservable(service)
       .flatMap(nothing -> {
@@ -274,7 +274,7 @@ public class KieServerClientTest {
 
     Async async = context.async();
 
-    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.KieServerClientService.DEFAULT_ADDRESS);
+    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.service.KieServerClientService.DEFAULT_ADDRESS);
 
     this.deleteAllContainersObservable(service)
       .flatMap(nothing -> {
@@ -300,7 +300,7 @@ public class KieServerClientTest {
 
     Async async = context.async();
 
-    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.KieServerClientService.DEFAULT_ADDRESS);
+    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.service.KieServerClientService.DEFAULT_ADDRESS);
 
     this.deleteAllContainersObservable(service)
       .flatMap(nothing -> {
@@ -328,7 +328,7 @@ public class KieServerClientTest {
 
     Async async = context.async();
 
-    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.KieServerClientService.DEFAULT_ADDRESS);
+    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.service.KieServerClientService.DEFAULT_ADDRESS);
 
     this.deleteAllContainersObservable(service)
       .flatMap(nothing -> {
@@ -356,7 +356,7 @@ public class KieServerClientTest {
 
     Async async = context.async();
 
-    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.KieServerClientService.DEFAULT_ADDRESS);
+    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.service.KieServerClientService.DEFAULT_ADDRESS);
 
     this.deleteAllContainersObservable(service)
       .flatMap(nothing -> {
@@ -379,7 +379,7 @@ public class KieServerClientTest {
 
     Async async = context.async();
 
-    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.KieServerClientService.DEFAULT_ADDRESS);
+    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.service.KieServerClientService.DEFAULT_ADDRESS);
 
     this.deleteAllContainersObservable(service)
       .flatMap(nothing -> {
@@ -402,7 +402,7 @@ public class KieServerClientTest {
 
     Async async = context.async();
 
-    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.KieServerClientService.DEFAULT_ADDRESS);
+    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.service.KieServerClientService.DEFAULT_ADDRESS);
 
     this.deleteAllContainersObservable(service)
       .flatMap(nothing -> {
@@ -428,7 +428,7 @@ public class KieServerClientTest {
 
     Async async = context.async();
 
-    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.KieServerClientService.DEFAULT_ADDRESS);
+    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.service.KieServerClientService.DEFAULT_ADDRESS);
 
     this.deleteAllContainersObservable(service)
       .flatMap(nothing -> {
@@ -447,13 +447,14 @@ public class KieServerClientTest {
         async::complete
       );
 
+
   }
   @Test
   public void testStartProcessCorrelation(TestContext context) {
 
     Async async = context.async();
 
-    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.KieServerClientService.DEFAULT_ADDRESS);
+    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.service.KieServerClientService.DEFAULT_ADDRESS);
 
     this.deleteAllContainersObservable(service)
       .flatMap(nothing -> {
@@ -479,7 +480,7 @@ public class KieServerClientTest {
 
     Async async = context.async();
 
-    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.KieServerClientService.DEFAULT_ADDRESS);
+    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.service.KieServerClientService.DEFAULT_ADDRESS);
 
     this.deleteAllContainersObservable(service)
       .flatMap(nothing -> {
@@ -517,7 +518,7 @@ public class KieServerClientTest {
 
     Async async = context.async();
 
-    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.KieServerClientService.DEFAULT_ADDRESS);
+    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.service.KieServerClientService.DEFAULT_ADDRESS);
 
     this.deleteAllContainersObservable(service)
       .flatMap(nothing -> {
@@ -547,7 +548,7 @@ public class KieServerClientTest {
 
     Async async = context.async();
 
-    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.KieServerClientService.DEFAULT_ADDRESS);
+    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.service.KieServerClientService.DEFAULT_ADDRESS);
 
     this.deleteAllContainersObservable(service)
       .flatMap(nothing -> {
@@ -583,7 +584,7 @@ public class KieServerClientTest {
 
     Async async = context.async();
 
-    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.KieServerClientService.DEFAULT_ADDRESS);
+    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.service.KieServerClientService.DEFAULT_ADDRESS);
 
     this.deleteAllContainersObservable(service)
       .flatMap(nothing -> {
@@ -613,7 +614,7 @@ public class KieServerClientTest {
 
     Async async = context.async();
 
-    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.KieServerClientService.DEFAULT_ADDRESS);
+    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.service.KieServerClientService.DEFAULT_ADDRESS);
 
     this.deleteAllContainersObservable(service)
       .flatMap(nothing -> {
@@ -643,7 +644,7 @@ public class KieServerClientTest {
 
     Async async = context.async();
 
-    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.KieServerClientService.DEFAULT_ADDRESS);
+    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.service.KieServerClientService.DEFAULT_ADDRESS);
 
     this.deleteAllContainersObservable(service)
       .flatMap(nothing -> {
@@ -675,7 +676,7 @@ public class KieServerClientTest {
 
     Async async = context.async();
 
-    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.KieServerClientService.DEFAULT_ADDRESS);
+    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.service.KieServerClientService.DEFAULT_ADDRESS);
 
     this.deleteAllContainersObservable(service)
       .flatMap(nothing -> {
@@ -705,7 +706,7 @@ public class KieServerClientTest {
 
     Async async = context.async();
 
-    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.KieServerClientService.DEFAULT_ADDRESS);
+    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.service.KieServerClientService.DEFAULT_ADDRESS);
 
     this.deleteAllContainersObservable(service)
       .flatMap(nothing -> {
@@ -730,6 +731,7 @@ public class KieServerClientTest {
         async::complete
       );
 
+
   }
 
 
@@ -738,7 +740,7 @@ public class KieServerClientTest {
 
     Async async = context.async();
 
-    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.KieServerClientService.DEFAULT_ADDRESS);
+    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.service.KieServerClientService.DEFAULT_ADDRESS);
 
     this.deleteAllContainersObservable(service)
       .flatMap(nothing -> {
@@ -773,7 +775,7 @@ public class KieServerClientTest {
 
     Async async = context.async();
 
-    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.KieServerClientService.DEFAULT_ADDRESS);
+    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.service.KieServerClientService.DEFAULT_ADDRESS);
 
     this.deleteAllContainersObservable(service)
       .flatMap(nothing -> {
@@ -807,7 +809,7 @@ public class KieServerClientTest {
 
     Async async = context.async();
 
-    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.KieServerClientService.DEFAULT_ADDRESS);
+    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.service.KieServerClientService.DEFAULT_ADDRESS);
 
     this.deleteAllContainersObservable(service)
       .flatMap(nothing -> {
@@ -841,7 +843,7 @@ public class KieServerClientTest {
 
     Async async = context.async();
 
-    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.KieServerClientService.DEFAULT_ADDRESS);
+    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.service.KieServerClientService.DEFAULT_ADDRESS);
 
     AtomicLong processInstanceId = new AtomicLong();
 
@@ -881,7 +883,7 @@ public class KieServerClientTest {
 
     Async async = context.async();
 
-    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.KieServerClientService.DEFAULT_ADDRESS);
+    KieServerClientService service = KieServerClientService.createProxy(new Vertx(rule.vertx()), com.diabolicallabs.kie.server.service.KieServerClientService.DEFAULT_ADDRESS);
 
     AtomicLong processInstanceId = new AtomicLong();
 

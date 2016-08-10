@@ -1,4 +1,4 @@
-package com.diabolicallabs.kie.server;
+package com.diabolicallabs.kie.server.service;
 
 import io.vertx.codegen.annotations.ProxyGen;
 import io.vertx.codegen.annotations.VertxGen;

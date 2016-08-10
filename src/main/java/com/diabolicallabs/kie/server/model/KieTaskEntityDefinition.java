@@ -1,13 +1,10 @@
-package com.diabolicallabs.kie.server;
+package com.diabolicallabs.kie.server.model;
 
 import io.vertx.codegen.annotations.DataObject;
 import io.vertx.core.json.JsonObject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 @DataObject
 public class KieTaskEntityDefinition {

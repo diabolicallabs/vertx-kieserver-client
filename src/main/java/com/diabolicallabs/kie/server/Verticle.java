@@ -1,11 +1,13 @@
 package com.diabolicallabs.kie.server;
 
+import com.diabolicallabs.kie.server.service.KieServerClientService;
+import com.diabolicallabs.kie.server.service.KieServerClientServiceImpl;
+import com.diabolicallabs.kie.server.service.KieServerClientTaskService;
+import com.diabolicallabs.kie.server.service.KieServerClientTaskServiceImpl;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.rxjava.core.AbstractVerticle;
 import io.vertx.serviceproxy.ProxyHelper;
-
-import java.util.Base64;
 
 public class Verticle extends AbstractVerticle {
 

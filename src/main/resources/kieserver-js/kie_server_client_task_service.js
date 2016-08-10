@@ -20,7 +20,7 @@ var Vertx = require('vertx-js/vertx');
 
 var io = Packages.io;
 var JsonObject = io.vertx.core.json.JsonObject;
-var JKieServerClientTaskService = com.diabolicallabs.kie.server.KieServerClientTaskService;
+var JKieServerClientTaskService = com.diabolicallabs.kie.server.service.KieServerClientTaskService;
 
 /**
  @class

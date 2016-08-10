@@ -1,4 +1,4 @@
-package com.diabolicallabs.kie.server;
+package com.diabolicallabs.kie.server.model;
 
 import io.vertx.codegen.annotations.DataObject;
 import io.vertx.core.json.JsonArray;

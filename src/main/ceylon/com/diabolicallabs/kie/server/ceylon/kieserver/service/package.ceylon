@@ -1,0 +1,1 @@
+shared package com.diabolicallabs.kie.server.ceylon.kieserver.service;
