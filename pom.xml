@@ -1,14 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
 
     <groupId>com.diabolicallabs</groupId>
     <artifactId>vertx-kieserver-client</artifactId>
     <packaging>jar</packaging>
-    <version>0.9-SNAPSHOT</version>
+    <version>0.9</version>
+
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>9</version>
+    </parent>
+
+    <name>KIE Server Client for Eclipse Vert.x</name>
+
+    <description>https://github.com/diabolicallabs/vertx-kieserver-client</description>
+
+    <url>https://github.com/diabolicallabs/vertx-kieserver-client</url>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://github.com/diabolicallabs/vertx-kieserver-client</url>
+        <connection>scm:git:git@github.com:diabolicallabs/vertx-kieserver-client.git</connection>
+        <developerConnection>scm:git:git@github.com:diabolicallabs/vertx-kieserver-client.git</developerConnection>
+        <tag>vertx-kieserver-client-0.9</tag>
+    </scm>
+
+    <issueManagement>
+        <url>https://github.com/diabolicallabs/vertx-kieserver-client/issues</url>
+    </issueManagement>
+
+    <developers>
+        <developer>
+            <name>Diabolical Labs</name>
+        </developer>
+    </developers>
 
     <properties>
         <main.verticle>com.diabolicallabs.kie.server.Verticle</main.verticle>
