@@ -6,7 +6,7 @@
     <groupId>com.diabolicallabs</groupId>
     <artifactId>vertx-kieserver-client</artifactId>
     <packaging>jar</packaging>
-    <version>0.9.2-SNAPSHOT</version>
+    <version>0.9-SNAPSHOT</version>
 
     <parent>
         <groupId>org.sonatype.oss</groupId>
@@ -31,7 +31,7 @@
         <url>https://github.com/diabolicallabs/vertx-kieserver-client</url>
         <connection>scm:git:git@github.com:diabolicallabs/vertx-kieserver-client.git</connection>
         <developerConnection>scm:git:git@github.com:diabolicallabs/vertx-kieserver-client.git</developerConnection>
-        <tag>vertx-kieserver-client-0.9.1</tag>
+        <tag>vertx-kieserver-client-0.9</tag>
     </scm>
 
     <issueManagement>
