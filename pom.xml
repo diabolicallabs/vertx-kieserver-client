@@ -6,7 +6,7 @@
     <groupId>com.diabolicallabs</groupId>
     <artifactId>vertx-kieserver-client</artifactId>
     <packaging>jar</packaging>
-    <version>0.9</version>
+    <version>0.10-SNAPSHOT</version>
 
     <parent>
         <groupId>org.sonatype.oss</groupId>
