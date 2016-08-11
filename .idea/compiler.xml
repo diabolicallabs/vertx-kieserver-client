@@ -16,7 +16,7 @@
       <profile default="true" name="Default" enabled="false">
         <processorPath useClasspath="true" />
       </profile>
-      <profile default="false" name="Annotation profile for vertx-kieserver-client" enabled="true">
+      <profile default="false" name="Annotation profile for KIE Server Client for Eclipse Vert.x" enabled="true">
         <sourceOutputDir name="src/main/generated" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />

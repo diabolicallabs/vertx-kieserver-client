@@ -164,3 +164,4 @@ buildNumber.properties
 .mvn/timing.properties
 
 # Created by .ignore support plugin (hsz.mobi)
+/maven-central-deploy.log

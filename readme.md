@@ -18,11 +18,11 @@ With this module, you can:
 <dependency>
     <groupId>com.diabolicallabs</groupId>
     <artifactId>vertx-kieserver-client</artifactId>
-    <version>0.9</version>
+    <version>0.9.1</version>
 </dependency>
 ```
 
-**Version 0.9 does not yet have all of the expected features. Be aware that the API may
+**Version 0.9.1 does not yet have all of the expected features. Be aware that the API may
 change a bit before 1.0 is released.**
 
 ##Runtime Requirements
